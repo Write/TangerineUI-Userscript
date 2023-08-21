@@ -1,5 +1,5 @@
 # TangerineUI-Userscript
-An userscript to load [TangerineUI Redesign for Mastodon's Web UI](https://github.com/nileane/TangerineUI-for-Mastodon) by @nileane 🍊🐘 on whichever instance you'd like !
+An userscript to load [TangerineUI Redesign for Mastodon's Web UI](https://github.com/nileane/TangerineUI-for-Mastodon) by [@nileane](https://github.com/nileane) 🍊🐘 on whichever instance you'd like !
 
 # Usage
 - Create a new userscript in either ViolentMonkey or Tampermonkey and click on this [link](https://github.com/Write/TangerineUI-Userscript/raw/main/TangerineUI.user.js).
