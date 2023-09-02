@@ -2,7 +2,7 @@
 An userscript to load [TangerineUI Redesign for Mastodon's Web UI](https://github.com/nileane/TangerineUI-for-Mastodon) by [@nileane](https://github.com/nileane) 🍊🐘 on whichever instance you'd like !
 
 # Usage
-- Install either ViolentMonkey or Tampermonkey, then click on this [link](https://github.com/Write/TangerineUI-Userscript/raw/main/TangerineUI.user.js).
+- Install either [ViolentMonkey](https://violentmonkey.github.io/) or [Tampermonkey](https://www.tampermonkey.net/), then click on this [link](https://github.com/Write/TangerineUI-Userscript/raw/main/TangerineUI.user.js).
 - The userscript manager of your choice should offer you to install it.
 - Add a @match rule for each mastodon instance you want the theme to be enabled on.
 - Change the styleUrl if you would like to try out the purple variant.
