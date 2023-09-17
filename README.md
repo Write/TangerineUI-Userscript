@@ -19,7 +19,7 @@ An userscript to load [TangerineUI Redesign for Mastodon's Web UI](https://githu
 ### Release 1.3.0
 + ✨ Full support for Mastodon >= 4.1.6 ✨
 + Mastodon's enhanced their CSP restriction which made the userscript not working on instance above or equals >= 4.1.6
-+ I was kinda scared I couldn't find a workaround that, but thankfully mastodon expose a meta header, of the name "style-nonce", that you can fetch and   then inject the styling url with that nonce value. This, of course, add a penalty delay before theme's injection. I'd hapilly takes PR if you find a way around that. 
++ I was kinda scared I couldn't find a workaround that, but thankfully mastodon expose a meta header of the name "style-nonce", that you can fetch and use to inject the styling url with. This, of course, add a penalty delay before theme's injection. I'd hapilly takes PR if you find a way around that. 
 
 ### Release 1.2.5
 + Disable the script on page not stylized by TangerineUI anyway
