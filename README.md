@@ -10,7 +10,7 @@ An userscript to load [TangerineUI Redesign for Mastodon's Web UI](https://githu
    - Install an userscript manager › [Userscripts](https://apps.apple.com/tt/app/userscripts/id1463298887) — ([Github](https://github.com/quoid/userscripts))
 
 ## Installing the userscript
-- Once the userscript manager, click on this [link](https://github.com/Write/TangerineUI-Userscript/raw/main/TangerineUI.user.js), your userscript manager should offer you to install the script.
+- Once the userscript manager is installed, click on this [link](https://github.com/Write/TangerineUI-Userscript/raw/main/TangerineUI.user.js), your userscript manager should offer you to install the script.
 - After the userscript is installed, edit the userscript to add a @match (at the top of the file) rule for each mastodon instances you want the theme to be enabled on. Respect the same format that is given for mamot.fr and mastodon.social.
 - You can change the styleUrl if you would like to try out the purple variant.
 
