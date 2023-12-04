@@ -26,7 +26,7 @@
     /* Either 'tangerine' or 'purple' */
     const colorScheme = 'tangerine';
 
-    /* Github tag to use for mastodon instance below 4.3.0 and above or equals 4.3.0https://www.icloud.com/shortcuts/cec0c464458d402b9f53d28bb1da21a1
+    /* Github tag to use for mastodon instance below 4.3.0 and above or equals 4.3.0
     /* To find tags name, go here : https://github.com/nileane/TangerineUI-for-Mastodon/releases
     /* and look at the tag name in the left sidebar of the release
      * */
