@@ -26,6 +26,12 @@
     /* Either 'tangerine' or 'purple' */
     const colorScheme = 'tangerine';
 
+    /* Github tag to use for mastodon instance below 4.3.0 and above or equals 4.3.0https://www.icloud.com/shortcuts/cec0c464458d402b9f53d28bb1da21a1
+    /* To find tags name, go here : https://github.com/nileane/TangerineUI-for-Mastodon/releases
+    /* and look at the tag name in the left sidebar of the release
+     * */
+    const tag_below_4_3_0 = "latest"
+    const tag_above_or_equals_4_3_0 = "v2.0.0-pre3"
 
     /* ----------------
      *   HELPERS
@@ -36,18 +42,18 @@
     const theme                 = window.matchMedia?.("(prefers-color-scheme: dark)").matches ? "dark" : "light";
     const timeout               = 1000;
 
-    const tangerineURL          = '//cdn.jsdelivr.net/gh/nileane/TangerineUI-for-Mastodon@main/TangerineUI.css'
-    const tangerinePurpleURL    = '//cdn.jsdelivr.net/gh/nileane/TangerineUI-for-Mastodon@main/TangerineUI-purple.css'
-
-    const tangerine430URL       = 'https://cdn.jsdelivr.net/gh/nileane/TangerineUI-for-Mastodon@Mastodon-v4.3.0/TangerineUI.css'
-    const tangerinePurple430URL = 'https://cdn.jsdelivr.net/gh/nileane/TangerineUI-for-Mastodon@Mastodon-v4.3.0/TangerineUI-purple.css'
+    const tangerine_below_4_3_0             = '//cdn.jsdelivr.net/gh/nileane/TangerineUI-for-Mastodon@' + tag_below_4_3_0 + '/TangerineUI'
+    const tangerine_above_or_equals_4_3_0   = '//cdn.jsdelivr.net/gh/nileane/TangerineUI-for-Mastodon@' + tag_above_or_equals_4_3_0 + '/TangerineUI'
 
     /*
      * As long as no version is detected, styleUrl is set for version < 4.3.0
      * */
-    let styleUrl = tangerineURL
-    if (colorScheme == 'purple')
-        styleUrl = tangerinePurpleURL
+    let styleUrl = tangerine_below_4_3_0
+    if (colorScheme == 'purple') {
+        styleUrl = tangerine_below_4_3_0 + "-purple.min.css"
+    } else {
+        styleUrl = tangerine_below_4_3_0 + ".min.css"
+    }
 
     const isPurple = colorScheme.includes('purple') ? true : false;
 
@@ -83,18 +89,14 @@
     onElemAvailable('script[id^=initial-state]').then((selector) => {
         const mastodonVersion = JSON.parse(selector.innerText).meta.version
         log("Mastodon Version Detected is : " + mastodonVersion);
-        if (mastodonVersion.includes('4.3.') || mastodonVersion.includes('4.4.')) {
-            log("Version above or equel 4.3.0 found.")
+        if (mastodonVersion.includes('4.3.') || mastodonVersion.includes('4.4.') || mastodonVersion.includes('4.5.')) {
+            log("Version above or equal 4.3.0 found.")
             if (isPurple)
-              styleUrl = tangerinePurple430URL
+              styleUrl = tangerine_above_or_equals_4_3_0 + "-purple.min.css"
             else
-              styleUrl = tangerine430URL
+              styleUrl = tangerine_above_or_equals_4_3_0 + ".min.css"
         } else {
             log("Version below 4.3.0 found.")
-            if (isPurple)
-              styleUrl = tangerinePurpleURL
-            else
-              styleUrl = tangerineURL
         }
     });
 
