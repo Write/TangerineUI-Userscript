@@ -17,6 +17,11 @@ An userscript to load [TangerineUI Redesign for Mastodon's Web UI](https://githu
 
 # Changelog
 
+### Release 2.1.0
+
++ Add support for the new Cherry color scheme, only supported for versions above 4.3.0
++ Since older (<= 4.3.0) instances can't have the Cherry color scheme, I had to create a new variable, hence why there's now legacyColorScheme and newColorScheme var, so you can choose which color scheme to use for the "legacy" and "new" mastodon version.
+
 ### Release 2.0.0
 
 ![Untitled](https://github.com/Write/TangerineUI-Userscript/assets/541722/e80605da-c301-4381-ac5b-65ddeea2698f)
