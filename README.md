@@ -16,6 +16,14 @@ An userscript to load [TangerineUI Redesign for Mastodon's Web UI](https://githu
 
 # Changelog
 
+### Release 2.0.0
+
+![Untitled](https://github.com/Write/TangerineUI-Userscript/assets/541722/e80605da-c301-4381-ac5b-65ddeea2698f)
+
++ ✨ Support Mastodon >= 4.3.0 ✨
++ Dynamically loads the right CSS based on your instance version
++ Loaded CSS is now minified thanks to jsdelivr
+
 ### Release 1.3.0
 + ✨ Full support for Mastodon >= 4.1.6 ✨
 + Mastodon's enhanced their CSP restriction which made the userscript not working on instance above or equals >= 4.1.6
