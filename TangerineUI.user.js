@@ -41,7 +41,8 @@
 
     /* ----------------
      *   HELPERS
-     * ---------------- */
+     * ----------------
+     * */
     const currentPagepath       = window.location.pathname;
     const placeholder           = 'TangerineUI 🍊';
     const log                   = (str) => console.log("* " + placeholder + " : " + str + " *");
@@ -85,7 +86,8 @@
 
     /* ----------------
      *   CODE
-     * ---------------- */
+     * ----------------
+     * */
     var isInjected = false;
     let backColor;
     let nChanges = 0;
@@ -136,6 +138,8 @@
     }, timeout);
 
     /* Observe and detect changes in the DOM
+     * Usually only works on Firefox, and it's faster than requestAnimationFrame
+     * in this case, hence why I keep this piece of code that kinda look like powerhouse but hey...
      * */
     new MutationObserver((mutations, observer) => {
         mutations.forEach(function(mutation) {
@@ -209,7 +213,7 @@
     }).observe(document.documentElement, { childList: true, subtree: true });
 
     /* Workaround if MutationObserver couldn't detect the item
-     * Usually in Safari
+     * Usually in Safari and Chrome (for Chrome, the first load seems to use MutationObserver, but anyway)
      * */
     onElemAvailable('link[rel^=stylesheet][href*=custom\\.css]').then(() => {
         if (!isInjected) {
