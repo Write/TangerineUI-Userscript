@@ -37,7 +37,7 @@
     /* and look at the tag name in the left sidebar of the release
      * */
     const tag_below_4_3_0 = "v1.9.5"
-    const tag_above_or_equals_4_3_0 = "v2.0.0-pre5"
+    const tag_above_or_equals_4_3_0 = "v2.0.0-pre6"
 
     /* ----------------
      *   HELPERS
