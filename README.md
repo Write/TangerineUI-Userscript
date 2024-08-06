@@ -10,10 +10,10 @@ An userscript to load [TangerineUI Redesign for Mastodon's Web UI](https://githu
    - Install an userscript manager › [Userscripts](https://apps.apple.com/tt/app/userscripts/id1463298887) — ([Github](https://github.com/quoid/userscripts))
 
 ## Installing the userscript
-- Once the userscript manager is installed, click on this [link](https://github.com/Write/TangerineUI-Userscript/raw/main/TangerineUI.user.js), your userscript manager should offer you to install the script.
-- After the userscript is installed, edit the userscript to add a @include (at the top of the file) rule for each mastodon instances you want the theme to be enabled on. Respect the same format that is given for mamot.fr and mastodon.social.
-- You can change easily switch between the normal and purple variant by changing colorScheme var.
-- You can set the tag you want to use for instance below 4.3.0 and above (or equal) 4.3.0 in tag_below_4_3_0 and tag_above_or_equals_4_3_0 vars. To find tag, look at the left sidebar in the releases of TangerineUI : https://github.com/nileane/TangerineUI-for-Mastodon/releases and change it accordingly.
+- Once the userscript manager is installed, click on this [link](https://github.com/Write/TangerineUI-Userscript/raw/main/TangerineUI.user.js), your userscript manager should offer you to install the script. On Safari, the Userscript extension doesn't offer this automatically, you would need to then click extension icon to be offered to install the userscript.
+- After the userscript is installed, edit the userscript to add a @match (at the top of the file) rule for each mastodon instances you want the theme to be enabled on. Respect the same format that is given for pre-defined instances.
+- You can change easily switch between the normal, purple or cherry variants by changing colorScheme (instances below 4.3) or newColorScheme (instances equals or above 4.3). Cherry is only available for >= 4.3.
+- You can set the tag you want to use for instances strictly below 4.3.0 and for instances >= 4.3.0 by changing tag_below_4_3_0 and tag_above_or_equals_4_3_0 variables. To find tag, look at the left sidebar in the releases of TangerineUI : https://github.com/nileane/TangerineUI-for-Mastodon/releases and change it accordingly.
 
 # Changelog
 
