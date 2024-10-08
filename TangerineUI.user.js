@@ -5,12 +5,13 @@
 // @match       https://mastodon.social/*
 // @match       https://piaille.fr/*
 // @match       https://eldritch.cafe/*
+// @match       https://h-i.social/*
 // @match       https://AddYourInstanceUrlHere.tld/*
 // @downloadURL https://github.com/Write/TangerineUI-Userscript/raw/main/TangerineUI.user.js
 // @updateURL   https://github.com/Write/TangerineUI-Userscript/raw/main/TangerineUI.user.js
 // @homepageURL https://github.com/Write/TangerineUI-Userscript
 // @grant       none
-// @version     2.1.2
+// @version     2.2.0
 // @author      @Write on Github for the UserScript
 // @author      @nileane for TangerineUI's CSS
 // @icon        data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACE0lEQVR4AZXOA2xeUQAF4BvNW8xGi7WFY227v81otu0Fs23btq3attunvrN7//bOPMmX98414bFa4edyda12u7te0m8d1UKhRyNVT32idrtcGE6+jdMpBzjtUjOFf2KTZJddchKWsWPR22HprKLATBwnYOM6CfNni+Bjs2d0j02ZKLDOCVZrhx9xGNuT7aY2MAvmdKCjQwXP0UMidm4ToPYMiSKwcmkn+Hqbsd1L7LqWqTZ9M5injyXf4oN7O3HkQCdkGRAEFWdOCNi9vROKAnx8L4Ovt+uaZhCbpn6eTVsPpjBfRkN9F3ivLFfQ0qJ+6SXFCupqv86zvcSWVjPTml4DprhQRm21At7ZgbU1X3tBnoxGegHvlvSa2cSaUjXWklIJhh/Ae2Ge5DuA94JcyfdC3q2plVOJObncYU4qA1NcIPkO4H2soxLjXZW80wNEesDXeVNSqYcY44s1pvhiMDcvt+LB7Tbw/qPrF1rx+F77l25IKh1KjNEFw40xBfhfhpiCs4RFE/JxgDEqR6Xwj5qptZaot/0JjyE867UhPBOcMeJThCH8U6QhLNNgjMj06iMyjfQ/0RSROSQ2Nrc3+TG60I/J+tAPKgWfsI/7NaMe9SXfxBSbO4j8Kdrgdx5d0FuBQrd3zbrgN28Y2quofPK3aILeDtb6v1yt8X/5Suv/qo0Sdf6vijT+r05q/F9Hkl/kM/y+SpUd6mHfAAAAAElFTkSuQmCC
@@ -29,15 +30,15 @@
     const legacyColorScheme = 'tangerine';
 
     /* colorScheme used for new (>= 4.3) instances */
-    /* Either 'tangerine', 'purple' or 'cherry' */
-    const newColorScheme = 'tangerine';
+    /* Either 'tangerine', 'purple', 'cherry' or 'lagoon' */
+    const colorScheme = 'tangerine';
 
     /* Github tag to use for mastodon instance < 4.3 and >= 4.3
     /* To find tags name, go here : https://github.com/nileane/TangerineUI-for-Mastodon/releases
     /* and look at the tag name in the left sidebar of the release
      * */
     const tag_below_4_3_0 = "v1.9.5"
-    const tag_above_or_equals_4_3_0 = "v2.0.0-pre6"
+    const tag_above_or_equals_4_3_0 = "v2.0"
 
     /* ----------------
      *   HELPERS
@@ -63,8 +64,9 @@
     }
 
     const isPurpleLegacy = legacyColorScheme.includes('purple') ? true : false;
-    const isPurple = newColorScheme.includes('purple') ? true : false;
-    const isCherry = newColorScheme.includes('cherry') ? true : false;
+    const isPurple = colorScheme.includes('purple') ? true : false;
+    const isCherry = colorScheme.includes('cherry') ? true : false;
+    const isLagoon = colorScheme.includes('lagoon') ? true : false;
 
     const onElemAvailable = async selector => {
         while (document.querySelector(selector) === null) {
@@ -105,6 +107,8 @@
               styleUrl = tangerine_above_or_equals_4_3_0 + "-purple.min.css"
             else if (isCherry)
               styleUrl = tangerine_above_or_equals_4_3_0 + "-cherry.min.css"
+            else if (isLagoon)
+              styleUrl = tangerine_above_or_equals_4_3_0 + "-lagoon.min.css"
             else
               styleUrl = tangerine_above_or_equals_4_3_0 + ".min.css"
         } else {
