@@ -17,6 +17,11 @@ An userscript to load [TangerineUI Redesign for Mastodon's Web UI](https://githu
 
 # Changelog
 
+### Release 2.2.0 
+
++ Bump default tag for v2.0 of TangerineUI. 
++ Add support for lagoon color scheme.
+
 ### Release 2.1.0
 
 + Add support for the new Cherry color scheme, only supported for versions above 4.3.0
