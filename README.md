@@ -17,6 +17,12 @@ An userscript to load [TangerineUI Redesign for Mastodon's Web UI](https://githu
 
 # Changelog
 
+### Release 2.2.1
+
++ set default TangerineUI tag to latest release : v2.1
++ fix a race condition that injected the theme before mastodon version could be detected
++ "temporarily" remove the workaround that was made to avoid 'flash issues' while loading.
+
 ### Release 2.2.0 
 
 + Bump default tag for v2.0 of TangerineUI. 
