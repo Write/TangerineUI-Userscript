@@ -11,7 +11,7 @@
 // @updateURL   https://github.com/Write/TangerineUI-Userscript/raw/main/TangerineUI.user.js
 // @homepageURL https://github.com/Write/TangerineUI-Userscript
 // @grant       none
-// @version     2.2.0
+// @version     2.2.1
 // @author      @Write on Github for the UserScript
 // @author      @nileane for TangerineUI's CSS
 // @icon        data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACE0lEQVR4AZXOA2xeUQAF4BvNW8xGi7WFY227v81otu0Fs23btq3attunvrN7//bOPMmX98414bFa4edyda12u7te0m8d1UKhRyNVT32idrtcGE6+jdMpBzjtUjOFf2KTZJddchKWsWPR22HprKLATBwnYOM6CfNni+Bjs2d0j02ZKLDOCVZrhx9xGNuT7aY2MAvmdKCjQwXP0UMidm4ToPYMiSKwcmkn+Hqbsd1L7LqWqTZ9M5injyXf4oN7O3HkQCdkGRAEFWdOCNi9vROKAnx8L4Ovt+uaZhCbpn6eTVsPpjBfRkN9F3ivLFfQ0qJ+6SXFCupqv86zvcSWVjPTml4DprhQRm21At7ZgbU1X3tBnoxGegHvlvSa2cSaUjXWklIJhh/Ae2Ge5DuA94JcyfdC3q2plVOJObncYU4qA1NcIPkO4H2soxLjXZW80wNEesDXeVNSqYcY44s1pvhiMDcvt+LB7Tbw/qPrF1rx+F77l25IKh1KjNEFw40xBfhfhpiCs4RFE/JxgDEqR6Xwj5qptZaot/0JjyE867UhPBOcMeJThCH8U6QhLNNgjMj06iMyjfQ/0RSROSQ2Nrc3+TG60I/J+tAPKgWfsI/7NaMe9SXfxBSbO4j8Kdrgdx5d0FuBQrd3zbrgN28Y2quofPK3aILeDtb6v1yt8X/5Suv/qo0Sdf6vijT+r05q/F9Hkl/kM/y+SpUd6mHfAAAAAElFTkSuQmCC
@@ -95,10 +95,12 @@
     let nChanges = 0;
     let timeoutExist = false;
     let mutationStatus = true;
+    let isVersionDetected = false;
     let nonce;
 
     /* Version detection */
     onElemAvailable('script[id^=initial-state]').then((selector) => {
+        isVersionDetected = true;
         const mastodonVersion = JSON.parse(selector.innerText).meta.version
         log("Mastodon Version Detected is : " + mastodonVersion);
         if (mastodonVersion.includes('4.3.') || mastodonVersion.includes('4.4.') || mastodonVersion.includes('4.5.')) {
@@ -136,10 +138,13 @@
      * This is to avoid flashing issues where main's theme background
      * is shown first, before TangerineUI had time to load.
      * */
+
+    /*
     document.querySelector('html').style.setProperty("background", backColor, "important");
     setTimeout(function() {
         document.querySelector('html').style.background = '';
     }, timeout);
+    */
 
     /* Observe and detect changes in the DOM
      * Usually only works on Firefox, and it's faster than requestAnimationFrame
@@ -160,6 +165,26 @@
                       nonce = node.content;
                   }
                 }
+                else if (nodeType == 'script') {
+                  if (node.id == 'initial-state') {
+                      isVersionDetected = true;
+                      const mastodonVersion = JSON.parse(node.innerText).meta.version
+                      log("(mutationObserver) Mastodon Version Detected is : " + mastodonVersion);
+                      if (mastodonVersion.includes('4.3.') || mastodonVersion.includes('4.4.') || mastodonVersion.includes('4.5.')) {
+                          log("(mutationObserver) Version above or equal 4.3.0 found.")
+                          if (isPurple)
+                            styleUrl = tangerine_above_or_equals_4_3_0 + "-purple.min.css"
+                          else if (isCherry)
+                            styleUrl = tangerine_above_or_equals_4_3_0 + "-cherry.min.css"
+                          else if (isLagoon)
+                            styleUrl = tangerine_above_or_equals_4_3_0 + "-lagoon.min.css"
+                          else
+                            styleUrl = tangerine_above_or_equals_4_3_0 + ".min.css"
+                      } else {
+                          log("(mutationObserver) Version below 4.3.0 found.")
+                      }
+                  }
+                }
                 else if (nodeType == 'link') {
                     if (node.href !== undefined) {
                         href = node.href;
@@ -170,7 +195,7 @@
                          * On my system mastodon.*.chunk.css wasn't detected on Chrome
                          * */
                         if ((href.match(rCustom) || href.match(rChunk)) && !isInjected) {
-                            if (nonce) {
+                            if (nonce && isVersionDetected) {
                                 nChanges++;
                                 isInjected = true;
                                 document.head.appendChild(createStyleNode(nonce));
@@ -182,12 +207,16 @@
                 }
                 else if (nodeType == 'body') {
                     nChanges++;
-                    node.style.setProperty("background", backColor, "important");
-                    node.style.setProperty("background-color", backColor, "important");
-                    setTimeout(function() {
-                        node.style.background = '';
-                        node.style.backgroundColor = '';
-                    }, timeout);
+                    /*
+                    if (!isInjected) {
+                      node.style.setProperty("background", backColor, "important");
+                      node.style.setProperty("background-color", backColor, "important");
+                      setTimeout(function() {
+                          node.style.background = '';
+                          node.style.backgroundColor = '';
+                      }, timeout);
+                    }
+                    */
                 }
 
             }
