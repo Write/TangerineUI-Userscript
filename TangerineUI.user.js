@@ -12,7 +12,7 @@
 // @updateURL   https://github.com/Write/TangerineUI-Userscript/raw/main/TangerineUI.user.js
 // @homepageURL https://github.com/Write/TangerineUI-Userscript
 // @grant       none
-// @version     2.2.4.1
+// @version     2.2.4.2
 // @author      @Write on Github for the UserScript
 // @author      @nileane for TangerineUI's CSS
 // @run-at      document-start
@@ -22,6 +22,14 @@
     /* ----------------
      *   SETTINGS
      * ---------------- */
+    /* Default themes for hosts not configured in perHostThemes */
+    /* These will be used as fallback for any Mastodon instance not explicitly configured below */
+    /* Available themes: 'tangerine', 'purple', 'cherry', 'lagoon' */
+    const defaultThemes = {
+        legacy: 'tangerine',  // For versions < 4.3.0
+        modern: 'cherry'      // For versions >= 4.3.0
+    };
+    
     /* Per-host theme configuration */
     /* Set specific themes for different Mastodon instances */
     /* Available themes: 'tangerine', 'purple', 'cherry', 'lagoon' */
@@ -53,13 +61,10 @@
         // Add more hosts as needed
     };
     
-    /* Default fallback themes (used if host is not configured above) */
-    /* colorScheme used for older (< 4.3) instances */
-    /* Either 'tangerine' or 'purple' */
-    const legacyColorScheme = 'tangerine';
-    /* colorScheme used for new (>= 4.3) instances */
-    /* Either 'tangerine', 'purple', 'cherry' or 'lagoon' */
-    const colorScheme = 'cherry';
+    /* Legacy fallback variables (kept for compatibility) */
+    /* These are now derived from defaultThemes above */
+    const legacyColorScheme = defaultThemes.legacy;
+    const colorScheme = defaultThemes.modern;
     /* Github tags to use for different mastodon version ranges
     /* To find tags name, go here : https://github.com/nileane/TangerineUI-for-Mastodon/releases
     /* and look at the tag name in the left sidebar of the release
@@ -86,8 +91,8 @@
             log(`Using ${isLegacy ? 'legacy' : 'modern'} theme '${selectedTheme}' for host: ${currentHost}`);
             return selectedTheme;
         } else {
-            const fallbackTheme = isLegacy ? legacyColorScheme : colorScheme;
-            log(`Host '${currentHost}' not configured, using fallback ${isLegacy ? 'legacy' : 'modern'} theme: ${fallbackTheme}`);
+            const fallbackTheme = isLegacy ? defaultThemes.legacy : defaultThemes.modern;
+            log(`Host '${currentHost}' not configured, using default ${isLegacy ? 'legacy' : 'modern'} theme: ${fallbackTheme}`);
             return fallbackTheme;
         }
     }
