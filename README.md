@@ -17,6 +17,11 @@ An userscript to load [TangerineUI Redesign for Mastodon's Web UI](https://githu
 
 # Changelog
 
+### Release 2.2.4
+
++ Per Host Theme support
++ Handles 2.4 / 2.3 / 1.9.5 versions of TangerineUI correctly to match instance curent version.
+
 ### Release 2.2.3
 
 + set default TangerineUI tag to latest release : v2.3
