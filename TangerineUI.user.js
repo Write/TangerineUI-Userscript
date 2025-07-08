@@ -35,8 +35,8 @@
     /* Available themes: 'tangerine', 'purple', 'cherry', 'lagoon' */
     const perHostThemes = {
         'mamot.fr': {
-            legacy: 'tangerine',  // For versions < 4.3.0
-            modern: 'cherry'      // For versions >= 4.3.0
+            legacy: 'tangerine',
+            modern: 'cherry'
         },
         'mastodon.social': {
             legacy: 'purple',
