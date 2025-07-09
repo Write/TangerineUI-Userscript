@@ -12,7 +12,7 @@
 // @updateURL   https://github.com/Write/TangerineUI-Userscript/raw/main/TangerineUI.user.js
 // @homepageURL https://github.com/Write/TangerineUI-Userscript
 // @grant       none
-// @version     2.2.4.3
+// @version     2.2.4.4
 // @author      @Write on Github for the UserScript
 // @author      @nileane for TangerineUI's CSS
 // @run-at      document-start
