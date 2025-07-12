@@ -57,7 +57,7 @@
         },
         'diaspodon.fr': {
             legacy: 'tangerine',
-            modern: 'cherry'
+            modern: 'purple'
         }
         // Add more hosts as needed
     };
