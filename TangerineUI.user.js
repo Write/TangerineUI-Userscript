@@ -12,7 +12,7 @@
 // @updateURL   https://github.com/Write/TangerineUI-Userscript/raw/main/TangerineUI.user.js
 // @homepageURL https://github.com/Write/TangerineUI-Userscript
 // @grant       none
-// @version     2.2.4.4
+// @version     2.2.4.5
 // @author      @Write on Github for the UserScript
 // @author      @nileane for TangerineUI's CSS
 // @run-at      document-start
@@ -72,7 +72,7 @@
      */
     const tag_below_4_3_0 = "v1.9.5"
     const tag_4_3_0_exactly = "v2.3"
-    const tag_above_or_equals_4_4_0 = "v2.4.1"
+    const tag_above_or_equals_4_4_0 = "v2.4.2"
     /* ----------------
      *   HELPERS
      * ----------------
