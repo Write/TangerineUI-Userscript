@@ -12,6 +12,74 @@
 // @match       https://diaspodon.fr/*
 // @match       https://metalhead.club/*
 // @match       https://mastodon.macstories.net/*
+// @match       https://aleph.land/*
+// @match       https://anticapitalist.party/*
+// @match       https://bdx.town/*
+// @match       https://burnout.cafe/*
+// @match       https://catharsis.cafe/*
+// @match       https://djs.social/*
+// @match       https://epsilon.social/*
+// @match       https://equestria.social/*
+// @match       https://eupolicy.social/*
+// @match       https://forall.social/*
+// @match       https://gayfr.social/*
+// @match       https://gemeinsam.bio/*
+// @match       https://greenhill.zone/*
+// @match       https://h4.io/*
+// @match       https://im-in.space/*
+// @match       https://lou.lt/*
+// @match       https://ludosphere.fr/*
+// @match       https://maly.io/*
+// @match       https://mas.atmx.ca/*
+// @match       https://mastodon.acerbo.me/*
+// @match       https://mastodon.art/*
+// @match       https://mastodon-belgium.be/*
+// @match       https://mastodon.codingfield.com/*
+// @match       https://mastodon.ethibox.fr/*
+// @match       https://mastodon.fedi.bzh/*
+// @match       https://mastodon.fun/*
+// @match       https://mastodon.mg/*
+// @match       https://mastodon.opportunis.me/*
+// @match       https://mastodon.opencloud.lu/*
+// @match       https://mastodon.pirateparty.be/*
+// @match       https://mastodon.roflcopter.fr/*
+// @match       https://mastodon.scop.coop/*
+// @match       https://mastodon.tedomum.net/*
+// @match       https://mastodon.tn/*
+// @match       https://mastodon.top/*
+// @match       https://mastodon.xyz/*
+// @match       https://mastodon.zaclys.com/*
+// @match       https://mastodontech.de/*
+// @match       https://mastoot.fr/*
+// @match       https://meow.social/*
+// @match       https://mstdn.ca/*
+// @match       https://mstdn.fr/*
+// @match       https://mstdn.io/*
+// @match       https://mstdn.social/*
+// @match       https://mst3k.interlinked.me/*
+// @match       https://mtl.rocks/*
+// @match       https://oc.todon.fr/*
+// @match       https://oldbytes.space/*
+// @match       https://pipou.academy/*
+// @match       https://pouet.chapril.org/*
+// @match       https://ps.s10y.eu/*
+// @match       https://rivals.space/*
+// @match       https://shelter.moe/*
+// @match       https://social.bim.land/*
+// @match       https://social.linux.pizza/*
+// @match       https://social.roadfm.fr/*
+// @match       https://social.sciences.re/*
+// @match       https://social.taker.fr/*
+// @match       https://social.targaryen.house/*
+// @match       https://sociale.network/*
+// @match       https://swiss.social/*
+// @match       https://tchafia.be/*
+// @match       https://thecanadian.social/*
+// @match       https://todon.eu/*
+// @match       https://todon.nl/*
+// @match       https://tooting.ch/*
+// @match       https://ublog.tech/*
+// @match       https://yyc.bike/*
 //
 // @downloadURL https://github.com/Write/TangerineUI-Userscript/raw/main/TangerineUI.user.js
 // @updateURL   https://github.com/Write/TangerineUI-Userscript/raw/main/TangerineUI.user.js
@@ -121,6 +189,346 @@
         "diaspodon.fr": {
             legacy: "tangerine",
             modern: "purple",
+            neue: "tangerine",
+        },
+        "aleph.land": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "anticapitalist.party": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "bdx.town": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "burnout.cafe": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "catharsis.cafe": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "djs.social": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "epsilon.social": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "equestria.social": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "eupolicy.social": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "forall.social": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "gayfr.social": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "gemeinsam.bio": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "greenhill.zone": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "h4.io": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "im-in.space": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "lou.lt": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "ludosphere.fr": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "maly.io": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "mas.atmx.ca": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "mastodon.acerbo.me": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "mastodon.art": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "mastodon-belgium.be": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "mastodon.codingfield.com": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "mastodon.ethibox.fr": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "mastodon.fedi.bzh": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "mastodon.fun": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "mastodon.mg": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "mastodon.opportunis.me": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "mastodon.opencloud.lu": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "mastodon.pirateparty.be": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "mastodon.roflcopter.fr": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "mastodon.scop.coop": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "mastodon.tedomum.net": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "mastodon.tn": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "mastodon.top": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "mastodon.xyz": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "mastodon.zaclys.com": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "mastodontech.de": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "mastoot.fr": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "meow.social": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "mstdn.ca": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "mstdn.fr": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "mstdn.io": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "mstdn.social": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "mst3k.interlinked.me": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "mtl.rocks": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "oc.todon.fr": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "oldbytes.space": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "pipou.academy": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "pouet.chapril.org": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "ps.s10y.eu": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "rivals.space": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "shelter.moe": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "social.bim.land": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "social.linux.pizza": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "social.roadfm.fr": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "social.sciences.re": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "social.taker.fr": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "social.targaryen.house": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "sociale.network": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "swiss.social": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "tchafia.be": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "thecanadian.social": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "todon.eu": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "todon.nl": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "tooting.ch": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "ublog.tech": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "yyc.bike": {
+            legacy: "tangerine",
+            modern: "tangerine",
             neue: "tangerine",
         },
         // Add more hosts as needed
