@@ -11,6 +11,7 @@
 // @match       https://h-i.social/*
 // @match       https://diaspodon.fr/*
 // @match       https://metalhead.club/*
+// @match       https://mastodon.macstories.net/*
 //
 // @downloadURL https://github.com/Write/TangerineUI-Userscript/raw/main/TangerineUI.user.js
 // @updateURL   https://github.com/Write/TangerineUI-Userscript/raw/main/TangerineUI.user.js
@@ -108,6 +109,11 @@
             neue: "cherry",
         },
         "h-i.social": {
+            legacy: "tangerine",
+            modern: "tangerine",
+            neue: "tangerine",
+        },
+        "mastodon.macstories.net": {
             legacy: "tangerine",
             modern: "tangerine",
             neue: "tangerine",
