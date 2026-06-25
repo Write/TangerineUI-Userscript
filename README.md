@@ -37,7 +37,7 @@ This userscript automatically detects your Mastodon instance version and loads t
 
 # Changelog
 
-### Release 2.3.0
+### Release v2.6.2.1 (TangerineUI v2.6.2)
 
 + ✨ Support Tangerine-Neue fork for Mastodon >= 4.6.0 ✨
 + Added **Granite** theme support (Tangerine-Neue only)
