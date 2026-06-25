@@ -1,21 +1,56 @@
-# TangerineUI-Userscript
-An userscript to load [TangerineUI Redesign for Mastodon's Web UI](https://github.com/nileane/TangerineUI-for-Mastodon) by [@nileane](https://github.com/nileane) 🍊🐘 on whichever instance you'd like !
+# TangerineUI Userscript 🍊🐘
+
+A userscript to load [TangerineUI Redesign for Mastodon's Web UI](https://github.com/nileane/TangerineUI-for-Mastodon) by [@nileane](https://github.com/nileane) — and its community fork [Tangerine-Neue for Mastodon](https://github.com/mattbirchler/Tangerine-Neue-for-Mastodon) by [@mattbirchler](https://github.com/mattbirchler) — on whichever instance you'd like!
+
+## About this fork
+
+**TangerineUI** by [@nileane](https://github.com/nileane) reached its end of life at version **v2.5.4-EOL**, supporting Mastodon up to **4.5.x**. The project is no longer maintained, and the repository has been archived.
+
+For Mastodon **4.6.x and above**, [@mattbirchler](https://github.com/mattbirchler) maintains **Tangerine-Neue**, a community fork that keeps the theme compatible with modern Mastodon versions and adds a new **Granite** theme (monochrome black-and-white, for those who prefer a neutral palette).
+
+> *"Its aspirations are modest. This fork exists primarily to keep the theme working on Mastodon 4.6 and 4.7. There has been some work on adopting Mastodon's new design tokens, which should make future maintenance easier."*
+> — [@mattbirchler](https://github.com/mattbirchler)
+
+This userscript automatically detects your Mastodon instance version and loads the correct CSS from the appropriate repository — no manual switching needed. Just install, add your instances, pick a theme, and you're good.
+
+**Full credit** for the original design and the vast majority of the work belongs to [@nileane](https://github.com/nileane). The Tangerine-Neue fork builds on that foundation to keep things running on newer releases. This userscript merely ties it all together.
 
 # Usage and Installation
 
-## Installing an userscript manager
+## Installing a userscript manager
 ### Chrome / Firefox
-   - Install an userscript manager, either › [ViolentMonkey](https://violentmonkey.github.io/) or [Tampermonkey](https://www.tampermonkey.net/)
+   - Install a userscript manager — either [ViolentMonkey](https://violentmonkey.github.io/) or [Tampermonkey](https://www.tampermonkey.net/)
 ### Safari (iOS / macOS)
-   - Install an userscript manager › [Userscripts](https://apps.apple.com/tt/app/userscripts/id1463298887) — ([Github](https://github.com/quoid/userscripts))
+   - Install a userscript manager — [Userscripts](https://apps.apple.com/tt/app/userscripts/id1463298887) ([GitHub](https://github.com/quoid/userscripts))
 
 ## Installing the userscript
-- Once the userscript manager is installed, click on this [link](https://github.com/Write/TangerineUI-Userscript/raw/main/TangerineUI.user.js), your userscript manager should offer you to install the script. On Safari, the Userscript extension doesn't offer this automatically, you would need to then click extension icon to be offered to install the userscript.
-- After the userscript is installed, edit the userscript to add a @match (at the top of the file) rule for each mastodon instances you want the theme to be enabled on. Respect the same format that is given for pre-defined instances.
-- You can change easily switch between the normal, purple or cherry variants by changing colorScheme (instances below 4.3) or newColorScheme (instances equals or above 4.3). Cherry is only available for >= 4.3.
-- You can set the tag you want to use for instances strictly below 4.3.0 and for instances >= 4.3.0 by changing tag_below_4_3_0 and tag_above_or_equals_4_3_0 variables. To find tag, look at the left sidebar in the releases of TangerineUI : https://github.com/nileane/TangerineUI-for-Mastodon/releases and change it accordingly.
+- Once the userscript manager is installed, click this [link](https://github.com/Write/TangerineUI-Userscript/raw/main/TangerineUI.user.js). Your userscript manager should offer you to install the script. On Safari, the Userscripts extension doesn't offer this automatically — you'll need to tap the extension icon to be prompted.
+- After the userscript is installed, edit the script to add a `@match` rule (at the top of the file) for each Mastodon instance you want the theme enabled on. Follow the same format as the pre-configured examples.
+- Choose your theme by changing the `defaultThemes` settings in the script:
+  - For instances **below 4.3.0** (legacy): set `legacy` — only `tangerine` and `purple` are available.
+  - For instances **4.3.x to 4.5.x**: set `modern` — `tangerine`, `purple`, `cherry`, and `lagoon` are available.
+  - For instances **4.6.x and above** (Tangerine-Neue): set `neue` — `tangerine`, `purple`, `cherry`, `lagoon`, and **`granite`** are available.
+- You can also set per-host themes in the `perHostThemes` object for more granular control per instance.
+- The tag variables at the top of the script point to the appropriate releases in each repository. To find available tags, check the releases page of the corresponding repo:
+  - [TangerineUI releases (nileane, ≤ 4.5.x)](https://github.com/nileane/TangerineUI-for-Mastodon/releases)
+  - [Tangerine-Neue releases (mattbirchler, ≥ 4.6.x)](https://github.com/mattbirchler/Tangerine-Neue-for-Mastodon/releases)
 
 # Changelog
+
+### Release 2.3.0
+
++ ✨ Support Tangerine-Neue fork for Mastodon >= 4.6.0 ✨
++ Added **Granite** theme support (Tangerine-Neue only)
++ Updated last TangerineUI tag to v2.5.4-EOL
++ Script now loads from the right repo depending on instance version:
+  - < 4.6.0 → [nileane/TangerineUI-for-Mastodon](https://github.com/nileane/TangerineUI-for-Mastodon)
+  - >= 4.6.0 → [mattbirchler/Tangerine-Neue-for-Mastodon](https://github.com/mattbirchler/Tangerine-Neue-for-Mastodon)
++ Per-host config now supports three version tiers: `legacy`, `modern`, `neue`
++ Better comments in the code to explain what does what
+
+### Release 2.2.5.4
+
++ Last release supporting only the original TangerineUI
 
 ### Release 2.2.4
 
@@ -24,17 +59,17 @@ An userscript to load [TangerineUI Redesign for Mastodon's Web UI](https://githu
 
 ### Release 2.2.3
 
-+ set default TangerineUI tag to latest release : v2.3
++ set default TangerineUI tag to latest release: v2.3
 
 ### Release 2.2.1
 
-+ set default TangerineUI tag to latest release : v2.1
++ set default TangerineUI tag to latest release: v2.1
 + fix a race condition that injected the theme before mastodon version could be detected
 + "temporarily" remove the workaround that was made to avoid 'flash issues' while loading.
 
 ### Release 2.2.0 
 
-+ Bump default tag for v2.0 of TangerineUI. 
++ Bump default tag for v2.0 of TangerineUI.
 + Add support for lagoon color scheme.
 
 ### Release 2.1.0
@@ -44,8 +79,6 @@ An userscript to load [TangerineUI Redesign for Mastodon's Web UI](https://githu
 
 ### Release 2.0.0
 
-![Untitled](https://github.com/Write/TangerineUI-Userscript/assets/541722/e80605da-c301-4381-ac5b-65ddeea2698f)
-
 + ✨ Support Mastodon >= 4.3.0 ✨
 + Dynamically loads the right CSS based on your instance version
 + Loaded CSS is now minified thanks to jsdelivr
@@ -53,27 +86,27 @@ An userscript to load [TangerineUI Redesign for Mastodon's Web UI](https://githu
 ### Release 1.3.0
 + ✨ Full support for Mastodon >= 4.1.6 ✨
 + Mastodon's enhanced their CSP restriction which made the userscript not working on instance above or equals >= 4.1.6
-+ I was kinda scared I couldn't find a workaround that, but thankfully mastodon expose a meta header of the name "style-nonce", that you can fetch and use to inject the styling url with. This, of course, add a penalty delay before theme's injection. I'd hapilly takes PR if you find a way around that. 
++ I was kinda scared I couldn't find a workaround that, but thankfully mastodon expose a meta header of the name "style-nonce", that you can fetch and use to inject the styling url with. This, of course, add a penalty delay before theme's injection. I'd hapilly takes PR if you find a way around that.
 
 ### Release 1.2.5
-+ Disable the script on page not stylized by TangerineUI anyway
++ Disable the script on pages not stylized by TangerineUI anyway
 
 ### Release 1.2.4
 + Forcefully disconnect MutationObserver after 3 seconds if MutationObserver wasn't disconnect already
-   _This fix a performance issue where MutationObserver would be running indefinitely if it never detected the element_
+  _This fix a performance issue where MutationObserver would be running indefinitely if it never detected the element_
 + Apply background && background-color to \<body> tag yet again
 + Add a configurable timeout after how much time the css applied \<html> and \<body> should be reverted, default to 1 second
 
 ### Release 1.2.3
 + Now apply background color pre-emptively on either light or dark mode
-   _This fix a flashing issue on load, if the instance main's theme was set as dark mode, but the system was in light mode_
+  _This fix a flashing issue on load, if the instance main's theme was set as dark mode, but the system was in light mode_
 + The pre-emptively color set to \<html> is now dynamic, based selected theme (for light mode only, as dark mode as same color for both variants)
 + Correctly set background color in dark mode to TangerineUI Color instead of pure black
 
 ### Release 1.2.0
 - "Production ready" code
 - \<html> tag now injected instantly, as it doesn't require to wait for it.
-- Moved from requestAnimationFrame to MutationObserver which should inject theme even faster. 
+- Moved from requestAnimationFrame to MutationObserver which should inject theme even faster.
 - Hugely improved code's readability
 - Compatible with both Firefox and Chrome
-- Support Safari, even though injection is slow, limited to requestAnimationFrame API as MutationObserver doesn't work most of the time (except when cache is cleared with CMD + SHIFT + R), certainly a limitation from how Safari handle extensions. Safari extension is : https://apps.apple.com/us/app/userscripts/id1463298887  -- Mac & iOS support. It support UserStyles too, so you could just create one instead.
+- Support Safari, even though injection is slow, limited to requestAnimationFrame API as MutationObserver doesn't work most of the time (except when cache is cleared with CMD + SHIFT + R), certainly a limitation from how Safari handle extensions. Safari extension is: https://apps.apple.com/us/app/userscripts/id1463298887  -- Mac & iOS support. It support UserStyles too, so you could just create one instead.
